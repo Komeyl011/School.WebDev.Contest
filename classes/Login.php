@@ -24,14 +24,13 @@ class Login
         return $empty;
     }
     // login function
-    public function logUserIn()
+    public function logUserIn(): void
     {
 
         include 'DbConn.php';
-        $conn = new DbConn();
 
-        $stmt = $conn->connect()->prepare("SELECT * FROM users WHERE userName=?");
-        $stmt->execute([$this->userName]);
+        $stmt = DbConn::connect()->prepare("SELECT * FROM users WHERE userName=? OR email=?");
+        $stmt->execute([$this->userName, $this->userName]);
 
         global $uid;
         global $pwd;
@@ -52,7 +51,7 @@ class Login
             session_start();
 
             $_SESSION['username'] = $uid;
-            header("Location: ../index.php?login=success");
+            header("Location: ../item.php?login=success");
         }
     }
 }

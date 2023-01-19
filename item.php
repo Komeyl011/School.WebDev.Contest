@@ -6,7 +6,7 @@
     <header>
         <section id="item_header">
             <div class="navigation">
-                <a href="<?= $_SERVER['HTTP_REFERER'] ?>"><p>< back</p></a>
+                <a href="index.php"><p>< back</p></a>
             </div>
             <div class="item_title">
                 <h3>

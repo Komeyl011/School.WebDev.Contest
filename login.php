@@ -11,10 +11,10 @@
 
             <form action="includes/login.inc.php" method="post">
                 <label for="uid" class="text-capitalize">username / e-mail</label>
-                <input type="text" class="w-75 m-3" name="uid">
+                <input type="text" class="w-80 m-3" name="uid">
                 <label for="pwd" class="text-capitalize">password</label>
-                <input type="password" class="w-75 m-3" name="pwd">
-                <button name="submit" type="submit">submit</button>
+                <input type="password" class="w-80 m-3" name="pwd">
+                <button name="submit" type="submit">login</button>
             </form>
 
         </div>

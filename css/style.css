@@ -743,7 +743,6 @@ footer form button:hover, footer form .checkbox input:hover {
 /* login page */
 
 #login_page {
-    background-color: rgb(136, 136, 136);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -751,10 +750,11 @@ footer form button:hover, footer form .checkbox input:hover {
 }
 
 .form-login {
-    width: 18rem;
-    height: 22rem;
+    width: fit-content;
+    padding: 3rem;
     background: linear-gradient(45deg, rgb(99, 99, 99),rgb(107, 106, 106));
     border-radius: 6px;
+    margin: 0 auto;
 }
 
 .form-login form {
@@ -764,7 +764,7 @@ footer form button:hover, footer form .checkbox input:hover {
 
 .form-login label {
     color: rgb(173, 173, 173);
-    margin: 0rem 1rem;
+    margin: 0 1rem;
 
 }
 .form-login input {
@@ -794,4 +794,8 @@ footer form button:hover, footer form .checkbox input:hover {
 
 .form-login button:hover {
     cursor: pointer;
+}
+
+#signup-page {
+    margin: 2rem 0;
 }

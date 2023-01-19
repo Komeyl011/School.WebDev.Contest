@@ -1,6 +1,7 @@
 <?php
     require_once 'classes/DbConn.php';
     require_once 'classes/Queries.php';
+    session_start();
 ?>
 <!doctype html>
 <html lang="en">
@@ -56,7 +57,13 @@
 
                 <!-- SUBSCRIBE BUTTON -->
                 <div class="subscribe_wrapper">
-                    <a href="#">subscribe</a>
+                    <?php
+                        if (isset($_SESSION['username'])) {
+                            echo "<a href='includes/logout.inc.php'>logout</a>";
+                        } else {
+                            echo "<a href='includes/login.inc.php'>login</a>";
+                        }
+                    ?>
                 </div>
             </section>
         </header>

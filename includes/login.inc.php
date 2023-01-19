@@ -1,6 +1,6 @@
 <?php
     if (isset($_POST['submit'])) {
-        $userName = $_POST['uid'];
+        $userName = trim($_POST['uid']);
         $password = $_POST['pwd'];
 
         include "../classes/Login.php";
