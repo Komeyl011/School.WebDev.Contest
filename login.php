@@ -14,7 +14,7 @@
                 <input type="text" class="w-80 m-3" name="uid">
                 <label for="pwd" class="text-capitalize">password</label>
                 <input type="password" class="w-80 m-3" name="pwd">
-                <button name="submit" type="submit">login</button>
+                <button name="submit" type="submit" class="form_button">login</button>
             </form>
 
         </div>

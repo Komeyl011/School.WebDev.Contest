@@ -16,7 +16,7 @@
     <link rel="icon" type="image/x-icon" href="images/logo.png">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
-    <!-- <script src="https://kit.fontawesome.com/57a53d4203.js" crossorigin="anonymous"></script> -->
+     <script src="https://kit.fontawesome.com/57a53d4203.js" crossorigin="anonymous"></script>
     <title>Find Home</title>
 </head>
 <body>
@@ -32,7 +32,7 @@
                         <h2 id="logo_name">
                             <?php
                             global $title;
-                            foreach(Queries::selectAll('company_name') as $title) {
+                            foreach(Queries::select('company_name') as $title) {
                                 echo $title['name'];
                             }
                             ?>
@@ -47,7 +47,7 @@
                     <?php
                     global $info;
 
-                    foreach (Queries::selectAll('website_info') as $info) {
+                    foreach (Queries::select('website_info') as $info) {
                         $info;
                     }
                     ?>
@@ -61,7 +61,7 @@
                         if (isset($_SESSION['username'])) {
                             echo "<a href='includes/logout.inc.php'>logout</a>";
                         } else {
-                            echo "<a href='includes/login.inc.php'>login</a>";
+                            echo "<a href='#'>Subscribe</a>";
                         }
                     ?>
                 </div>
@@ -72,7 +72,7 @@
             <?php
                 global $about;
 
-                foreach (Queries::selectAll('website_about') as $about) {
+                foreach (Queries::select('website_about') as $about) {
                     echo '
                         <div class="img_about">
                             <img src="images/'.$about['pic'].'" alt="logo">
@@ -97,21 +97,18 @@
                 <section class="featured_items">
 
                     <?php
-                        foreach (Queries::selectAll('items') as $item) {
+                        foreach (Queries::select('items') as $item) {
                             echo '
                                 <div class="item">
-                                    <img src="images/'.$item['picture'].'" alt="house" class="item_pic">
+                                    <img src="images/'.$item['thumbnail'].'" alt="house" class="item_pic">
                                     <div class="address_price_wrapper">
                                         <p class="address">'.$item['title'].'</p>
                                         <p class="price">$'.$item['price'].'</p>
                                     </div>
                                     <div class="info">
-                                        <img src="images/bed.png" alt="bed icon" class="item_property_icons">
-                                        <p class="info_number">'.$item['bedroom'].'</p>
-                                        <img src="images/shower.png" alt="shower icon" class="item_property_icons">
-                                        <p class="info_number">'.$item['bathroom'].'</p>
-                                        <img src="images/car.png" alt="car icon" class="item_property_icons">
-                                        <p class="info_number">'.$item['garage'].'</p>
+                                        <p class="info_number"><i class="fa-solid fa-bed"></i> '.$item['bedroom'].'</p>
+                                        <p class="info_number"><i class="fa-solid fa-shower"></i> '.$item['bathroom'].'</p>
+                                        <p class="info_number"><i class="fa-solid fa-car"></i> '.$item['garage'].'</p>
                                         <a href="/item.php?item='.$item['title'].'&id='.$_SERVER['REQUEST_TIME'].'.'.$item['id'].'" class="info_view">view</a>
                                     </div>
                                 </div>
@@ -132,7 +129,7 @@
 
                 <div class="client_stories container">
                     <?php
-                        foreach (Queries::selectAll('testimonials') as $story)
+                        foreach (Queries::select('testimonials') as $story)
                         {
                             echo '
                                 <div class="client_story">
@@ -155,7 +152,7 @@
 
                 <?php
                     global $content, $img;
-                    foreach (Queries::selectAll('website_get_in_touch') as $content)
+                    foreach (Queries::select('website_get_in_touch') as $content)
                     {
                         $content;
                     }
@@ -175,7 +172,7 @@
 
                 <div class="images">
                     <?php
-                        foreach(Queries::selectAll('get_in_touch_img') as $img)
+                        foreach(Queries::select('get_in_touch_img') as $img)
                         {
                             echo ' 
                                 <img src="images/'.$img['pic'].'" alt="">

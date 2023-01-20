@@ -11,6 +11,27 @@ class Queries extends DbConn
 
         return $res->fetchAll();
     }
+
+    //select query with condition
+    public static function select($table, $condition = null, $fetch = true): bool|array
+    {
+        global $res;
+
+        $conn = self::connect();
+
+        if ($condition != null) {
+            $res = $conn->query("SELECT * FROM $table WHERE $condition");
+        } else {
+            $res = $conn->query("SELECT * FROM $table");
+        }
+
+        if ($fetch) {
+            return $res->fetchAll();
+        } else {
+            return $res->fetch();
+        }
+    }
+
     //contact us table insert query
     public static function contactUsInsert($name, $mail, $phone, $callMe): int
     {

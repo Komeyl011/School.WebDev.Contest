@@ -25,7 +25,7 @@ require_once 'classes/Queries.php';
                 <label for="pwdconfirm" class="text-capitalize">confirm password</label>
                 <input type="password" class="w-80 m-3" id="pwdconfirm" name="pwdconfirm">
 
-                <button name="submit" type="submit">Signup</button>
+                <button name="submit" type="submit" class="form_button">Signup</button>
             </form>
 
         </div>

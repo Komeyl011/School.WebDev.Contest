@@ -14,6 +14,25 @@ html, body {
     margin: 0 auto;
 }
 
+.form_button {
+    background-color: rgb(225, 191, 109);
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--balck);
+    align-self: center;
+    padding: 0.5rem 1.5rem;
+    margin-top: 1rem;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    text-transform: capitalize;
+}
+
+.form_button:hover {
+    cursor: pointer;
+}
+
 header {
     height: fit-content;
 }
@@ -242,12 +261,8 @@ header #index_header {
     margin-inline-start: auto;
 }
 
-.item_property_icons {
-    width: 20px;
-    height: 20px;
-}
-
 .info_number {
+    font-size: .75rem;
     padding: 0 2em 0 5px;
 }
 
@@ -721,25 +736,6 @@ footer form button:hover, footer form .checkbox input:hover {
 
 }
 
-/* item details page */
-
-#item_header {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-#item_main {
-    margin: 10rem;
-}
-
-.item_info_wrapper .not_logged {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 /* login page */
 
 #login_page {
@@ -778,24 +774,186 @@ footer form button:hover, footer form .checkbox input:hover {
 
 }
 
-.form-login button {
-    background-color: rgb(225, 191, 109);
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--balck);
-    align-self: center;
-    padding: 0.5rem 1.5rem;
-    margin-top: 1rem;
-    border: none;
-    outline: none;
-    border-radius: 2px;
+#signup-page {
+    margin: 2rem 0;
 }
 
-.form-login button:hover {
+/* Item info page */
+
+#item_main {
+    margin: 10rem 0;
+}
+
+.item_info_wrapper .not_logged {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.item_info_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+/* Send request for item */
+
+.send_request {
+    display: flex;
+    flex-direction: column;
+    justify-content:end;
+}
+
+/* house description section */
+
+
+.description {
+    width: 35%;
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
+
+.description div {
+    margin: 0 2rem;
+}
+
+.description .about {
+    background-color: rgb(220, 220, 220);
+}
+
+.rooms span {
+    background-color: rgb(220, 220, 220);
+}
+
+/* House Pictures section */
+
+.pictures {
+    width: 35%;
+    margin-left: 3rem;
+}
+
+/* selection small pics section */
+
+.pics-sm-wrapper {
+    width: 15%;
+    margin: auto 1rem;
+}
+
+.pic-sm {
+    width: 100%;
+    height: 2.5rem;
+}
+
+.pic-sm:hover {
     cursor: pointer;
 }
 
-#signup-page {
-    margin: 2rem 0;
+.pic-sm img {
+    width: 100%;
+    height: 100%;
+}
+
+/* main picture */
+
+
+.pic-main {
+    width: 80%;
+    height: 16rem;
+}
+
+.pic-main img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+/* item page mobile design */
+
+@media screen and (max-width: 480px) {
+
+    header {
+        height: fit-content;
+    }
+
+    #item_main {
+        margin: 2rem 0 5rem 0;
+    }
+
+    .item_info_wrapper {
+        display: flex;
+        flex-direction: column-reverse;
+        margin: 0;
+    }
+    /* send request section */
+
+    .send_request {
+        display: flex;
+        flex-direction: column;
+        margin-top: 2rem;
+    }
+
+    .send_request form {
+        border: none;
+    }
+
+    .btm {
+        margin: 0 !important;
+        margin-left: 3rem !important;
+    }
+
+    .radiobtn {
+        display: flex;
+        margin-left: 1rem;
+    }
+
+    /* house description section */
+
+    .description {
+        width: 100%;
+    }
+
+    .about {
+        margin: 1rem auto;
+    }
+
+    .rooms {
+        margin: 1rem 2rem;
+    }
+
+    /* house pictures section */
+    .pictures {
+        width: fit-content;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    .pics-sm-wrapper {
+        width: 100%;
+        margin: 1rem 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .pic-sm {
+        width: 25%;
+        margin: 0 .5rem;
+    }
+
+    .pic-sm:last-child {
+        margin-bottom: 1rem;
+    }
+
+    .pic-main {
+        width: 100%;
+        margin: 0 auto;
+    }
 }

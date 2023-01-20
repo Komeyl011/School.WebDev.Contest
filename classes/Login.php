@@ -24,7 +24,7 @@ class Login
         return $empty;
     }
     // login function
-    public function logUserIn(): void
+    public function logUserIn($uri): void
     {
 
         include 'DbConn.php';
@@ -51,7 +51,7 @@ class Login
             session_start();
 
             $_SESSION['username'] = $uid;
-            header("Location: ../item.php?login=success");
+            header("Location: ../item.php?login=success&$uri");
         }
     }
 }
