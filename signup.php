@@ -27,6 +27,7 @@ require_once 'classes/Queries.php';
 
                 <button name="submit" type="submit" class="form_button">Signup</button>
             </form>
+            <p class="text-white mt-3 text-center">Have an account? <a href="login.php" class="text-decoration-none text-black-50">login here</a></p>
 
         </div>
     </section>

@@ -16,6 +16,7 @@
                 <input type="password" class="w-80 m-3" name="pwd">
                 <button name="submit" type="submit" class="form_button">login</button>
             </form>
+            <p class="text-white mt-3">Don't have an account? <a href="signup.php" class="text-decoration-none text-black-50">Signup here</a></p>
 
         </div>
     </section>

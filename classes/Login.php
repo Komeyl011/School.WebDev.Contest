@@ -51,7 +51,11 @@ class Login
             session_start();
 
             $_SESSION['username'] = $uid;
-            header("Location: ../item.php?login=success&$uri");
+            if (!empty($uri)) {
+                header("Location: ../item.php?login=success&$uri");
+            } else {
+                header("Location: ../index.php?login=success");
+            }
         }
     }
 }
