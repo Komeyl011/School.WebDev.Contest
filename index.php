@@ -109,7 +109,7 @@
                                         <p class="info_number"><i class="fa-solid fa-bed"></i> '.$item['bedroom'].'</p>
                                         <p class="info_number"><i class="fa-solid fa-shower"></i> '.$item['bathroom'].'</p>
                                         <p class="info_number"><i class="fa-solid fa-car"></i> '.$item['garage'].'</p>
-                                        <a href="/item.php?item='.$item['title'].'&id='.$_SERVER['REQUEST_TIME'].'.'.$item['id'].'" class="info_view">view</a>
+                                        <a href="item.php?item='.$item['title'].'&id='.$_SERVER['REQUEST_TIME'].'.'.$item['id'].'" class="info_view">view</a>
                                     </div>
                                 </div>
                             ';
