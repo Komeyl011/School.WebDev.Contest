@@ -143,7 +143,7 @@ header #index_header {
     align-items: center;
     width: 20em;
     height: 50%;
-    padding: 4em 6em;
+    padding: 2em;
 }
 
 .img_about p {
@@ -226,7 +226,7 @@ header #index_header {
 
 .item_pic {
     width: 100%;
-    height: 16rem;
+    height: 13rem;
 }
 
 .address_price_wrapper {
