@@ -4,7 +4,7 @@
     session_start();
 ?>
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="rtl">
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +16,7 @@
     <link rel="icon" type="image/x-icon" href="images/logo.png">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://kit.fontawesome.com/57a53d4203.js" crossorigin="anonymous"></script>
+     <script src="https://kit.fontawesome.com/57a53d4203.js" crossorigin="anonymous"></script>
     <title>Find Home</title>
 </head>
 <body>
@@ -29,14 +29,13 @@
                     <img src="images/logo.png" alt="website logo">
 
                     <div>
-                        <h2 id="logo_name">
-                            <?php
+                        <?php
                             global $title;
-                            foreach(Queries::select('company_name') as $title) {
-                                echo $title['name'];
+                            foreach(Queries::select('company_name_fa') as $title) {
+                                $title;
                             }
-                            ?>
-                        </h2>
+                        ?>
+                        <h2 id="logo_name"><?= $title['name'] ?></h2>
                         <p class="logo_txt"><?= $title['description'] ?></p>
                     </div>
 
@@ -47,21 +46,21 @@
                     <?php
                     global $info;
 
-                    foreach (Queries::select('website_info') as $info) {
+                    foreach (Queries::select('website_info_fa') as $info) {
                         $info;
                     }
                     ?>
-                    <h3><?= $info['whatWeDo'] ?? 'Let us help you find the best house in New York for you' ?></h3>
-                    <p><?= $info['subtext'] ?? 'Receive our weekly lists of all houses for rent and sale in the area.' ?></p>
+                    <h3><?= $info['whatWeDo'] ?? 'ما به شما کمک می‌کنیم تا خانه مناسب خود را پیدا کنید' ?></h3>
+                    <p><?= $info['subtext'] ?? 'لیست هفتگی آخرین خانه‌های برای فروش و یا اجاره در این منطقه را دریافت کنید.' ?></p>
                 </div>
 
                 <!-- SUBSCRIBE BUTTON -->
                 <div class="subscribe_wrapper">
                     <?php
                         if (isset($_SESSION['username'])) {
-                            echo "<a href='includes/logout.inc.php'>logout</a>";
+                            echo "<a href='includes/logout.inc.php'>خروج</a>";
                         } else {
-                            echo "<a href='#'>Subscribe</a>";
+                            echo "<a href='#'>عضویت</a>";
                         }
                     ?>
                 </div>
@@ -70,24 +69,17 @@
         <!-- THINGS THAT WEBSITE OFFER -->
         <section class="heading_about container">
             <?php
-                global $about, $a;
-                $a = 1;
+                global $about;
 
-                foreach (Queries::select('website_about') as $about) {
+                foreach (Queries::select('website_about_fa') as $about) {
                     echo '
                         <div class="img_about">
                             <img src="images/'.$about['pic'].'" alt="logo">
                             <p>'.$about['description'].'</p>
                         </div>
+                        <!-- BORDER BETWEEN -->
+                        <div class="border_about"></div>
                     ';
-                    if ($a < 3)
-                    {
-                        echo '
-                            <!-- BORDER BETWEEN -->
-                            <div class="border_about"></div>
-                        ';
-                    }
-                    $a++;
                 }
             ?>
         </section>
@@ -98,7 +90,7 @@
                 <!-- HEADING ON THE START OF WEBSITE MAIN CONTENT -->
                 <div class="heading">
                     <?php
-                        $listingHeader = Queries::select('listing_header', '', false);
+                        $listingHeader = Queries::select('listing_header_fa', '', false);
                     ?>
                     <p><?= $listingHeader['header'] ?></p>
                     <div class="line"></div>
@@ -107,19 +99,19 @@
                 <section class="featured_items">
 
                     <?php
-                        foreach (Queries::select('items') as $item) {
+                        foreach (Queries::select('items_fa') as $item) {
                             echo '
                                 <div class="item">
                                     <img src="images/'.$item['thumbnail'].'" alt="house" class="item_pic">
                                     <div class="address_price_wrapper">
                                         <p class="address">'.$item['title'].'</p>
-                                        <p class="price">$'.$item['price'].'</p>
+                                        <p class="price">'.$item['price'].' ریال</p>
                                     </div>
                                     <div class="info">
                                         <p class="info_number"><i class="fa-solid fa-bed"></i> '.$item['bedroom'].'</p>
                                         <p class="info_number"><i class="fa-solid fa-shower"></i> '.$item['bathroom'].'</p>
                                         <p class="info_number"><i class="fa-solid fa-car"></i> '.$item['garage'].'</p>
-                                        <a href="item.php?item='.$item['title'].'&id='.$_SERVER['REQUEST_TIME'].'.'.$item['id'].'" class="info_view">view</a>
+                                        <a href="item.php?item='.$item['title'].'&id='.$_SERVER['REQUEST_TIME'].'.'.$item['id'].'" class="info_view">مشاهده</a>
                                     </div>
                                 </div>
                             ';
@@ -133,13 +125,13 @@
             <section class="client_story_wrapper">
 
                 <div class="heading">
-                    <p>client stories & testimonials</p>
+                    <p>داستان‌های مشتریان و تجربه‌شان</p>
                     <div class="line"></div>
                 </div>
 
                 <div class="client_stories container">
                     <?php
-                        foreach (Queries::select('testimonials') as $story)
+                        foreach (Queries::select('testimonials_fa') as $story)
                         {
                             echo '
                                 <div class="client_story">
@@ -162,7 +154,7 @@
 
                 <?php
                     global $content, $img;
-                    foreach (Queries::select('website_get_in_touch') as $content)
+                    foreach (Queries::select('website_get_in_touch_fa') as $content)
                     {
                         $content;
                     }
